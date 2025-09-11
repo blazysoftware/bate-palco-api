@@ -1,0 +1,22 @@
+{
+  "name": "directus-postgres-npm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18.17" },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development directus start",
+    "start": "cross-env NODE_ENV=production directus start",
+    "initialize": "npx directus bootstrap",
+    "schema:snapshot": "directus schema snapshot ./data/schema.yaml",
+    "schema:apply": "directus schema apply ./data/schema.yaml --yes",
+    "seed": "node ./scripts/seed.mjs"
+  },
+  "dependencies": {
+    "directus": "11.11.0",
+    "@directus/sdk": "^17.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
