@@ -1,0 +1,23 @@
+# Dockerfile para deploy com Coolify (Node.js + Directus)
+FROM node:20-slim
+
+# Diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos de dependências
+COPY package*.json ./
+
+# Instala as dependências
+RUN npm install --production
+
+# Copia o restante do código
+COPY . .
+
+# Expõe a porta padrão do Directus
+EXPOSE 8055
+
+# Variável de ambiente para produção
+ENV NODE_ENV=production
+
+# Comando para iniciar o Directus
+CMD ["npx", "directus", "start"]
