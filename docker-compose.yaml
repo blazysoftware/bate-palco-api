@@ -7,6 +7,7 @@ services:
     environment:
 
       - SERVICE_URL_DIRECTUS_8055
+      - 'PUBLIC_URL=${SERVICE_URL_DIRECTUS}'
       - 'KEY=${KEY:-cAtcwMWDSblXCzw7rvH4lxnTqTMSuAps1}'
       - 'SECRET=${SECRET:-cUXsuXDiWaDBalTbOLzYl6hbOFzNWY9BL}'
       - 'NODE_ENV=${NODE_ENV:-development}'
