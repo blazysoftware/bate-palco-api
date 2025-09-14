@@ -55,8 +55,8 @@ services:
 
       # ====== Google OAuth / OpenID ======
       - 'AUTH_GOOGLE_DRIVER=openid'
-      - 'AUTH_GOOGLE_CLIENT_ID=${AUTH_GOOGLE_CLIENT_ID?-353113785593-0ienhgeq7khogmf5baqks95opi4psh0m.apps.googleusercontent.com}'
-      - 'AUTH_GOOGLE_CLIENT_SECRET=${AUTH_GOOGLE_CLIENT_SECRET?-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}'
+      - 'AUTH_GOOGLE_CLIENT_ID=${AUTH_GOOGLE_CLIENT_ID:-353113785593-0ienhgeq7khogmf5baqks95opi4psh0m.apps.googleusercontent.com}'
+      - 'AUTH_GOOGLE_CLIENT_SECRET=${AUTH_GOOGLE_CLIENT_SECRET:-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}'
       - 'AUTH_GOOGLE_ISSUER_URL=https://accounts.google.com'
       - 'AUTH_GOOGLE_SCOPE=openid email profile'
       - 'AUTH_GOOGLE_IDENTIFIER_KEY=email'
