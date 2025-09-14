@@ -6,15 +6,15 @@ services:
     container_name: directus_app
     environment:
       # ====== Core ======
-      - SERVICE_FODN_N8N_5678
+      - SERVICE_URL_DIRECTUS_8055
       - 'KEY=${KEY:-cAtcwMWDSblXCzw7rvH4lxnTqTMSuAps1}'
       - 'SECRET=${SECRET:-cUXsuXDiWaDBalTbOLzYl6hbOFzNWY9BL}'
       - 'NODE_ENV=${NODE_ENV:-development}'
       - 'LOG_LEVEL=${LOG_LEVEL:-info}'
       - 'TELEMETRY=${TELEMETRY:-false}'
-
+      - 'WEBSOCKETS_ENABLED=${WEBSOCKETS_ENABLED:-true}'
       - 'PORT=${PORT:-8055}'
-      - 'PUBLIC_URL=${SERVICE_FODN_N8N}'
+      - 'PUBLIC_URL=${SERVICE_URL_DIRECTUS}'
 
       # ======================
       # Database (PostgreSQL)
@@ -73,7 +73,7 @@ services:
       - 'STORAGE_R2_DRIVER=s3'
       - 'STORAGE_R2_KEY=${STORAGE_R2_KEY:-c25da0a9158444606efad27ffb4290a7}'
       - 'STORAGE_R2_SECRET=${STORAGE_R2_SECRET:-160aa0b5436b61679c4e3f1137f95afc042c65afe797e40106e70e1469de4030}'
-      - 'STORAGE_R2_BUCKET=${STORAGE_R2_BUCKET:-batepalco_dev}'
+      - 'STORAGE_R2_BUCKET=${STORAGE_R2_BUCKET:-batepalco-dev}'
       - 'STORAGE_R2_REGION=${STORAGE_R2_REGION:-auto}'
       - 'STORAGE_R2_ENDPOINT=${STORAGE_R2_ENDPOINT:-https://4703fbfa958a48f8b9a89e3b4cb720f1.r2.cloudflarestorage.com}'
       - 'STORAGE_R2_FORCE_PATH_STYLE=${STORAGE_R2_FORCE_PATH_STYLE:-true}'
