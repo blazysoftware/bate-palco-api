@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   directus:
-    image: directus/directus:11.11.0
+    image: directus/directus:11
     container_name: directus_app
     environment:
-      # ====== Core ======
+
       - SERVICE_URL_DIRECTUS_8055
       - 'KEY=${KEY:-cAtcwMWDSblXCzw7rvH4lxnTqTMSuAps1}'
       - 'SECRET=${SECRET:-cUXsuXDiWaDBalTbOLzYl6hbOFzNWY9BL}'
@@ -13,12 +13,6 @@ services:
       - 'LOG_LEVEL=${LOG_LEVEL:-info}'
       - 'TELEMETRY=${TELEMETRY:-false}'
       - 'WEBSOCKETS_ENABLED=${WEBSOCKETS_ENABLED:-true}'
-      - 'PORT=${PORT:-8055}'
-      - 'PUBLIC_URL=${SERVICE_URL_DIRECTUS}'
-
-      # ======================
-      # Database (PostgreSQL)
-      # ======================
       - 'DB_CLIENT=pg'
       - 'DB_HOST=${DB_HOST:-147.79.111.222}'
       - 'DB_PORT=${DB_PORT:-5432}'
@@ -26,34 +20,18 @@ services:
       - 'DB_USER=${DB_USER:-postgres}'
       - 'DB_PASSWORD=${DB_PASSWORD:-6fsK3PqIP9ZUtVJoVh20yV7XIpRjB1eI}'
       - 'DB_SSL=${DB_SSL:-false}'
-
-      # ======================
-      # Cache / Queue (Redis)
-      # ======================
       - 'CACHE_ENABLED=${CACHE_ENABLED:-true}'
       - 'CACHE_STORE=${CACHE_STORE:-redis}'
       - 'REDIS=${REDIS:-redis://default:6vqBaMtr1mSEGxbSKsS8jqWifTwxa3CFVJXLGXCKr7qAK7FrQroukwfNLT0Iu61V@147.79.111.222:6379/0}'
-
-      # ======================
-      # Auth
-      # ======================
       - 'ADMIN_EMAIL=${ADMIN_EMAIL:-admin@example.com}'
       - 'ADMIN_PASSWORD=${ADMIN_PASSWORD:-123@1H}'
       - 'ACCESS_TOKEN_TTL=${ACCESS_TOKEN_TTL:-15m}'
       - 'REFRESH_TOKEN_TTL=${REFRESH_TOKEN_TTL:-7d}'
-
-      # ======================
-      # CORS / Segurança
-      # ======================
       - 'CORS_ENABLED=${CORS_ENABLED:-false}'
       - 'CORS_ORIGIN=${CORS_ORIGIN}'
       - 'CORS_METHODS=${CORS_METHODS:-GET,POST,PATCH,DELETE}'
       - 'CORS_ALLOWED_HEADERS=${CORS_ALLOWED_HEADERS:-Content-Type,Authorization}'
-
-      # ====== Auth Providers ======
       - 'AUTH_PROVIDERS=google'
-
-      # ====== Google OAuth / OpenID ======
       - 'AUTH_GOOGLE_DRIVER=openid'
       - 'AUTH_GOOGLE_CLIENT_ID=${AUTH_GOOGLE_CLIENT_ID:-353113785593-0ienhgeq7khogmf5baqks95opi4psh0m.apps.googleusercontent.com}'
       - 'AUTH_GOOGLE_CLIENT_SECRET=${AUTH_GOOGLE_CLIENT_SECRET:-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}'
@@ -65,10 +43,6 @@ services:
       - 'AUTH_GOOGLE_ICON=google'
       - 'AUTH_GOOGLE_LABEL=Entrar com Google'
       - 'AUTH_GOOGLE_ALLOW_PUBLIC_REGISTRATION=${AUTH_GOOGLE_ALLOW_PUBLIC_REGISTRATION:-true}'
-
-      # ======================
-      # Storage (Cloudflare R2)
-      # ======================
       - 'STORAGE_LOCATIONS=r2'
       - 'STORAGE_R2_DRIVER=s3'
       - 'STORAGE_R2_KEY=${STORAGE_R2_KEY:-c25da0a9158444606efad27ffb4290a7}'
@@ -86,7 +60,7 @@ services:
       - "8055:8055"
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://127.0.0.1:8055/server/health || exit 1"]
-      interval: 10s
+      interval: 30s
       timeout: 5s
       retries: 10
     restart: unless-stopped
