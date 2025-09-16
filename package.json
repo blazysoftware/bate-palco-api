@@ -6,6 +6,7 @@
     "docker:run": "sh run-docker.sh",
     "dev": "cross-env NODE_ENV=development directus start",
     "start": "cross-env NODE_ENV=production directus start",
+    "push": "git add . && git commit -m 'update' && git push origin main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
