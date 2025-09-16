@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "docker:run": "sh run-docker.sh",
     "dev": "cross-env NODE_ENV=development directus start",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@directus/sdk": "^20.0.3",
     "cross-env": "^10.0.0",
     "directus": "^11.11.0"
   }
