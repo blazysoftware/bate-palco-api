@@ -3292,7 +3292,7 @@ ALTER TABLE ONLY public.suggestions
 
 --
 -- PostgreSQL database dump complete
---
+-- 
 
 \unrestrict Hg1yoftnY6xm67d95jkFoASG7idVDMtXyuAM4mIYR0NWqOB38i0aTZe73t5HWy2
 
