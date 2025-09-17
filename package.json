@@ -4,20 +4,27 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "docker:run": "sh run-docker.sh",
     "dev": "cross-env NODE_ENV=development directus start",
     "start": "cross-env NODE_ENV=production directus start",
     "initialize": "cross-env NODE_ENV=development directus bootstrap",
+    "snapshot:create": "directus schema snapshot ./initialize/batepalco.yaml --yes",
+    "snapshot:apply": "directus schema apply ./initialize/batepalco.yaml",
+    "policies": "node ./initialize/apply-policies.mjs",
+    "data": "node ./initialize/apply-data.mjs",
+    "setup": "node ./initialize/setup.mjs",
     "push": "git add . && git commit -m 'update' && git push origin main --force",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset-db": "node ./initialize/reset-db.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@directus/sdk": "^20.0.3",
+    "@directus/sdk": "^20.1.0",
     "cross-env": "^10.0.0",
-    "directus": "^11.11.0"
+    "directus": "^11.12.0",
+    "dotenv": "^17.2.2",
+    "uuid": "^13.0.0"
   }
 }
