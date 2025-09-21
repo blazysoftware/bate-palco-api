@@ -1,6 +1,3436 @@
 version: 1
 directus: 11.12.0
 vendor: postgres
-collections: []
-fields: []
-relations: []
+collections:
+  - collection: live_sessions
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: live_sessions
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: play_circle
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: live_sessions
+  - collection: lives
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: lives
+      color: null
+      display_template: '{{name}}{{status}}{{singer.email}}{{is_public}}{{date_event}}'
+      group: null
+      hidden: false
+      icon: move_up
+      item_duplication_fields: []
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: lives
+  - collection: messages
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: messages
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: chat
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: messages
+  - collection: requests
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: requests
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: library_music
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: requests
+  - collection: songs
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: songs
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: queue_music
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: songs
+  - collection: suggestions
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: suggestions
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: lightbulb
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: suggestions
+  - collection: themes
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: themes
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: palette
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: themes
+fields:
+  - collection: directus_users
+    field: plan
+    type: string
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: plan
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: Free
+            value: free
+          - text: Premium
+            value: premium
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: plan
+      table: directus_users
+      data_type: character varying
+      default_value: free
+      max_length: 50
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: directus_users
+    field: stage_name
+    type: string
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: stage_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: stage_name
+      table: directus_users
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: directus_users
+    field: bio
+    type: text
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: bio
+      group: null
+      hidden: false
+      interface: textarea
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: bio
+      table: directus_users
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: directus_users
+    field: photo
+    type: uuid
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: photo
+      group: null
+      hidden: false
+      interface: file
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special:
+        - file
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: photo
+      table: directus_users
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: id
+    type: uuid
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: live_sessions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: live
+    type: uuid
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: live
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live
+      table: live_sessions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: lives
+      foreign_key_column: id
+  - collection: live_sessions
+    field: artist
+    type: uuid
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: artist
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: artist
+      table: live_sessions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: live_sessions
+    field: name
+    type: string
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: live_sessions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: status
+    type: string
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: active
+            value: active
+          - text: ended
+            value: ended
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: live_sessions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: started_at
+    type: dateTime
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: started_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: started_at
+      table: live_sessions
+      data_type: timestamp without time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: ended_at
+    type: dateTime
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: ended_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: ended_at
+      table: live_sessions
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_sessions
+    field: where_are_you
+    type: json
+    meta:
+      collection: live_sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: where_are_you
+      group: null
+      hidden: false
+      interface: tags
+      note: Array de UUIDs (key_live) conectados
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: where_are_you
+      table: live_sessions
+      data_type: json
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: id
+    type: uuid
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: lives
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: date_created
+    type: timestamp
+    meta:
+      collection: lives
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: lives
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: name
+    type: string
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: slow_motion_video
+        placeholder: Nome do Evento
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: lives
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: slug
+    type: string
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: slug
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: slug
+      table: lives
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: reusable
+    type: boolean
+    meta:
+      collection: lives
+      conditions: null
+      display: boolean
+      display_options:
+        colorOff: '#E35169'
+        colorOn: '#2ECDA7'
+        labelOff: Nāo
+        labelOn: Sim
+      field: reusable
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options:
+        colorOff: '#E35169'
+        colorOn: '#2ECDA7'
+        iconOff: disabled_visible
+        iconOn: autorenew
+      readonly: false
+      required: true
+      sort: 7
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: reusable
+      table: lives
+      data_type: boolean
+      default_value: true
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: is_public
+    type: boolean
+    meta:
+      collection: lives
+      conditions: null
+      display: boolean
+      display_options:
+        colorOff: '#E35169'
+        colorOn: '#2ECDA7'
+        iconOff: dangerous
+        iconOn: eye_tracking
+      field: is_public
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options:
+        colorOff: '#E35169'
+        colorOn: '#2ECDA7'
+        iconOff: folder_limited
+        iconOn: folder_eye
+      readonly: false
+      required: true
+      sort: 8
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: is_public
+      table: lives
+      data_type: boolean
+      default_value: true
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: max_messages_per_client
+    type: integer
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: max_messages_per_client
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 98
+        min: 1
+      readonly: false
+      required: true
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: max_messages_per_client
+      table: lives
+      data_type: integer
+      default_value: 5
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: comment_cooldown_seconds
+    type: integer
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: comment_cooldown_seconds
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 997
+        min: 0
+      readonly: false
+      required: true
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: comment_cooldown_seconds
+      table: lives
+      data_type: integer
+      default_value: 10
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: max_song_requests_per_client
+    type: integer
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: max_song_requests_per_client
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 1000
+        min: 1
+      readonly: false
+      required: true
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: max_song_requests_per_client
+      table: lives
+      data_type: integer
+      default_value: 5
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: status
+    type: string
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: offline
+            value: offline
+          - text: online
+            value: online
+          - text: closed
+            value: closed
+      readonly: false
+      required: true
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: lives
+      data_type: character varying
+      default_value: offline
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: date_event
+    type: dateTime
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: date_event
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options:
+        relative: true
+      readonly: false
+      required: true
+      sort: 13
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: date_event
+      table: lives
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: lives
+    field: singer
+    type: uuid
+    meta:
+      collection: lives
+      conditions: null
+      display: null
+      display_options: null
+      field: singer
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        template: '{{first_name}}{{last_name}}({{email}})'
+      readonly: false
+      required: false
+      sort: 14
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: singer
+      table: lives
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: messages
+    field: id
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: live
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: live
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: lives
+      foreign_key_column: id
+  - collection: messages
+    field: session
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: session
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: session
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+  - collection: messages
+    field: sender_type
+    type: string
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: sender_type
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: artist
+            value: artist
+          - text: client
+            value: client
+          - text: public
+            value: public
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: sender_type
+      table: messages
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: sender_name
+    type: string
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: sender_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: sender_name
+      table: messages
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: sender_user
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: sender_user
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: sender_user
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: messages
+    field: content
+    type: text
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: content
+      group: null
+      hidden: false
+      interface: textarea
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: content
+      table: messages
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: sent_at
+    type: dateTime
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: sent_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: sent_at
+      table: messages
+      data_type: timestamp without time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: reactions
+    type: json
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: reactions
+      group: null
+      hidden: false
+      interface: tags
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: reactions
+      table: messages
+      data_type: json
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: visibility
+    type: json
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: visibility
+      group: null
+      hidden: false
+      interface: tags
+      note: 'Array de roles que podem ver: public, client, singer'
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: visibility
+      table: messages
+      data_type: json
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: is_super
+    type: boolean
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: is_super
+      group: null
+      hidden: false
+      interface: boolean
+      note: Mensagem de SuperChat
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: is_super
+      table: messages
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: is_hidden
+    type: boolean
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: is_hidden
+      group: null
+      hidden: false
+      interface: boolean
+      note: Oculta mensagem (API não envia)
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: is_hidden
+      table: messages
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: key_live
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: key_live
+      group: null
+      hidden: false
+      interface: input
+      note: UUID (key_live) do autor (público/logado)
+      options: null
+      readonly: false
+      required: false
+      sort: 13
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: key_live
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: messages
+    field: linked_request
+    type: uuid
+    meta:
+      collection: messages
+      conditions: null
+      display: null
+      display_options: null
+      field: linked_request
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: Linka a um pedido para status em linha do chat
+      options: null
+      readonly: false
+      required: false
+      sort: 14
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: linked_request
+      table: messages
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: requests
+      foreign_key_column: id
+  - collection: requests
+    field: id
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: live
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: live
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: lives
+      foreign_key_column: id
+  - collection: requests
+    field: session
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: session
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: session
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+  - collection: requests
+    field: song
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: song
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: song
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: songs
+      foreign_key_column: id
+  - collection: requests
+    field: status
+    type: string
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: pending
+            value: pending
+          - text: accepted
+            value: accepted
+          - text: rejected
+            value: rejected
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: requests
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: requested_by
+    type: string
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: requested_by
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: requested_by
+      table: requests
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: requested_user
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: requested_user
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: requested_user
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: requested_at
+    type: dateTime
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: requested_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: requested_at
+      table: requests
+      data_type: timestamp without time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: reactions
+    type: json
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: reactions
+      group: null
+      hidden: false
+      interface: tags
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: reactions
+      table: requests
+      data_type: json
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: is_super
+    type: boolean
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: is_super
+      group: null
+      hidden: false
+      interface: boolean
+      note: Pedido originado por SuperChat
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: is_super
+      table: requests
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: superchat_type
+    type: string
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: superchat_type
+      group: null
+      hidden: false
+      interface: input
+      note: 'Tipo escolhido no SuperChat (ex: basic/plus/vip)'
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: superchat_type
+      table: requests
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: played_at
+    type: dateTime
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: played_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: played_at
+      table: requests
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: answered_at
+    type: dateTime
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: answered_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 13
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: answered_at
+      table: requests
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: requests
+    field: accepted_by
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: accepted_by
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 14
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: accepted_by
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: requests
+    field: key_live
+    type: uuid
+    meta:
+      collection: requests
+      conditions: null
+      display: null
+      display_options: null
+      field: key_live
+      group: null
+      hidden: false
+      interface: input
+      note: UUID (key_live) do autor do pedido (público ou logado)
+      options: null
+      readonly: false
+      required: false
+      sort: 15
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: key_live
+      table: requests
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: songs
+    field: id
+    type: uuid
+    meta:
+      collection: songs
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: songs
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: songs
+    field: title
+    type: string
+    meta:
+      collection: songs
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: songs
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: songs
+    field: artist_name
+    type: string
+    meta:
+      collection: songs
+      conditions: null
+      display: null
+      display_options: null
+      field: artist_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: artist_name
+      table: songs
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: songs
+    field: recommended
+    type: boolean
+    meta:
+      collection: songs
+      conditions: null
+      display: null
+      display_options: null
+      field: recommended
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: recommended
+      table: songs
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: songs
+    field: owner
+    type: uuid
+    meta:
+      collection: songs
+      conditions: null
+      display: null
+      display_options: null
+      field: owner
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: owner
+      table: songs
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: suggestions
+    field: id
+    type: uuid
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: suggestions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: live
+    type: uuid
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: live
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live
+      table: suggestions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: lives
+      foreign_key_column: id
+  - collection: suggestions
+    field: session
+    type: uuid
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: session
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: session
+      table: suggestions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+  - collection: suggestions
+    field: title
+    type: string
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: suggestions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: artist_name
+    type: string
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: artist_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: artist_name
+      table: suggestions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: observations
+    type: text
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: observations
+      group: null
+      hidden: false
+      interface: textarea
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: observations
+      table: suggestions
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: suggested_by
+    type: string
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: suggested_by
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: suggested_by
+      table: suggestions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: suggested_user
+    type: uuid
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: suggested_user
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: suggested_user
+      table: suggestions
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: suggestions
+    field: suggested_at
+    type: dateTime
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: suggested_at
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: suggested_at
+      table: suggestions
+      data_type: timestamp without time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: suggestions
+    field: status
+    type: string
+    meta:
+      collection: suggestions
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: pending
+            value: pending
+          - text: approved
+            value: approved
+          - text: rejected
+            value: rejected
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: suggestions
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: themes
+    field: id
+    type: uuid
+    meta:
+      collection: themes
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: themes
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: themes
+    field: owner
+    type: uuid
+    meta:
+      collection: themes
+      conditions: null
+      display: null
+      display_options: null
+      field: owner
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: owner
+      table: themes
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: themes
+    field: mode
+    type: string
+    meta:
+      collection: themes
+      conditions: null
+      display: null
+      display_options: null
+      field: mode
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: Light
+            value: light
+          - text: Dark
+            value: dark
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: mode
+      table: themes
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: themes
+    field: color1
+    type: string
+    meta:
+      collection: themes
+      conditions: null
+      display: null
+      display_options: null
+      field: color1
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: color1
+      table: themes
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: themes
+    field: color2
+    type: string
+    meta:
+      collection: themes
+      conditions: null
+      display: null
+      display_options: null
+      field: color2
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: color2
+      table: themes
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+relations:
+  - collection: live_sessions
+    field: live
+    related_collection: lives
+    meta:
+      junction_field: null
+      many_collection: live_sessions
+      many_field: live
+      one_allowed_collections: null
+      one_collection: lives
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: live_sessions
+      column: live
+      foreign_key_table: lives
+      foreign_key_column: id
+      constraint_name: live_sessions_live_foreign
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: live_sessions
+    field: artist
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: live_sessions
+      many_field: artist
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: live_sessions
+      column: artist
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: live_sessions_artist_foreign
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: lives
+    field: singer
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: lives
+      many_field: singer
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: lives
+      column: singer
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: lives_singer_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: messages
+    field: live
+    related_collection: lives
+    meta:
+      junction_field: null
+      many_collection: messages
+      many_field: live
+      one_allowed_collections: null
+      one_collection: lives
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: messages
+      column: live
+      foreign_key_table: lives
+      foreign_key_column: id
+      constraint_name: messages_live_foreign
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: messages
+    field: session
+    related_collection: live_sessions
+    meta:
+      junction_field: null
+      many_collection: messages
+      many_field: session
+      one_allowed_collections: null
+      one_collection: live_sessions
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: messages
+      column: session
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+      constraint_name: messages_session_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: messages
+    field: sender_user
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: messages
+      many_field: sender_user
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: messages
+      column: sender_user
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: messages_sender_user_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: messages
+    field: linked_request
+    related_collection: requests
+    meta:
+      junction_field: null
+      many_collection: messages
+      many_field: linked_request
+      one_allowed_collections: null
+      one_collection: requests
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: messages
+      column: linked_request
+      foreign_key_table: requests
+      foreign_key_column: id
+      constraint_name: messages_linked_request_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: requests
+    field: live
+    related_collection: lives
+    meta:
+      junction_field: null
+      many_collection: requests
+      many_field: live
+      one_allowed_collections: null
+      one_collection: lives
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: requests
+      column: live
+      foreign_key_table: lives
+      foreign_key_column: id
+      constraint_name: requests_live_foreign
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: requests
+    field: session
+    related_collection: live_sessions
+    meta:
+      junction_field: null
+      many_collection: requests
+      many_field: session
+      one_allowed_collections: null
+      one_collection: live_sessions
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: requests
+      column: session
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+      constraint_name: requests_session_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: requests
+    field: song
+    related_collection: songs
+    meta:
+      junction_field: null
+      many_collection: requests
+      many_field: song
+      one_allowed_collections: null
+      one_collection: songs
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: requests
+      column: song
+      foreign_key_table: songs
+      foreign_key_column: id
+      constraint_name: requests_song_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: requests
+    field: accepted_by
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: requests
+      many_field: accepted_by
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: requests
+      column: accepted_by
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: requests_accepted_by_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: songs
+    field: owner
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: songs
+      many_field: owner
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: songs
+      column: owner
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: songs_owner_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: suggestions
+    field: live
+    related_collection: lives
+    meta:
+      junction_field: null
+      many_collection: suggestions
+      many_field: live
+      one_allowed_collections: null
+      one_collection: lives
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: suggestions
+      column: live
+      foreign_key_table: lives
+      foreign_key_column: id
+      constraint_name: suggestions_live_foreign
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: suggestions
+    field: session
+    related_collection: live_sessions
+    meta:
+      junction_field: null
+      many_collection: suggestions
+      many_field: session
+      one_allowed_collections: null
+      one_collection: live_sessions
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: suggestions
+      column: session
+      foreign_key_table: live_sessions
+      foreign_key_column: id
+      constraint_name: suggestions_session_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: suggestions
+    field: suggested_user
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: suggestions
+      many_field: suggested_user
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: suggestions
+      column: suggested_user
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: suggestions_suggested_user_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL

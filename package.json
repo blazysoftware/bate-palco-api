@@ -12,8 +12,8 @@
     "policies": "node ./initialize/apply-policies.mjs",
     "data": "node ./initialize/apply-data.mjs",
     "setup": "node ./initialize/setup.mjs",
+    "add": "./quickstart.sh",
     "push": "git add . && git commit -m 'update' && git push origin main --force",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "reset-db": "node ./initialize/reset-db.mjs"
   },
   "keywords": [],
